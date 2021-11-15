@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lato", sans-serif;
+}
+header {
+    display:flex;
+    justify-content: space-around;
+    width:95%;
+    margin:auto;
+    height:10vh;
+    align-items: center;
+    color:#929292
+}
+
+.main-logo, .nav-links, .login-btn {
+    display:flex;
+}
+
+.main-logo {
+    flex:1;
+}
+nav {
+    flex:2;
+}
+
+.login-btn-txt {
+    color:#32c5ff;
+    border: 2px solid #32c5ff;
+    border-radius: 6px;
+    padding: 8px 32px;
+}
+
+.nav-links {
+    display:flex;    
+    justify-content:space-around;
+    list-style:none;
+}
+.nav-link {
+    text-decoration: none;
+}
+.content1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    background: rgb(189,120,0);
+    background: linear-gradient(90deg, rgba(189,120,0,1) 0%, rgba(184,84,186,1) 35%, rgba(111,22,209,1) 71%, rgba(15,62,212,1) 100%);
+}
+
+.content1 div{
+    padding-top: 100px;
+}
+
+.box1{
+    width:300px;  
+}
+
+.box2 {
+    margin-bottom: -100px;
+}
+
+#explore-btn{
+    background: linear-gradient(177.31deg, #32c5ff -71.22%, #7275f0 81.97%, #b620e0 246.67% );
+    border: 2px solid;
+    border-radius: 8px;
+    padding:12px 32px;
+}
+
+.burger {
+    display:none;
+}
+.burger div {
+    width:20px;
+    height:5px;
+    background-color: rgb(58, 54, 54);
+    margin:5px;
+}
+
+.content2{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeate(2,1fr);
+    grid-template-areas: "tri-bg tri-bg"
+    "iph-in-hand .";
+}
+
+@media screen and (max-width:1200px) {
+    body {
+        overflow:hidden;
+    }
+    .nav-links {
+        position:absolute;
+        right:0px;
+        height:90vh;
+        top:10vh;
+        background-color: rgb(255, 255, 255);
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .burger {
+        display:block;
+        cursor:pointer;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+}
