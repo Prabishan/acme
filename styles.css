@@ -2,112 +2,383 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:"Lato", sans-serif;
+    font-family: "Lato", sans-serif;
 }
-header {
-    display:flex;
-    justify-content: space-around;
-    width:95%;
-    margin:auto;
-    height:10vh;
-    align-items: center;
-    color:#929292
+body {
+    overflow-x: hidden;
+    
 }
 
-.main-logo, .nav-links, .login-btn {
-    display:flex;
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin: auto;
+    height: 10vh;
+    align-items: center;
+    color: #929292
+}
+
+.main-logo,
+.nav-links,
+.login-btn {
+    display: flex;
 }
 
 .main-logo {
-    flex:1;
+    flex: 1;
 }
+
 nav {
-    flex:2;
+    flex: 2;
 }
 
 .login-btn-txt {
-    color:#32c5ff;
+    color: #32c5ff;
     border: 2px solid #32c5ff;
     border-radius: 6px;
     padding: 8px 32px;
 }
 
 .nav-links {
-    display:flex;    
-    justify-content:space-around;
-    list-style:none;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
 }
+
 .nav-link {
     text-decoration: none;
 }
-.content1{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:space-around;
-    background: rgb(189,120,0);
-    background: linear-gradient(90deg, rgba(189,120,0,1) 0%, rgba(184,84,186,1) 35%, rgba(111,22,209,1) 71%, rgba(15,62,212,1) 100%);
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 440px);
+    grid-template-areas:
+        "content1"
+        "content2"
+        "content3"
+        "content4"
+        "content5";
+
 }
 
-.content1 div{
+.content1 {
+    display: flex;
+    justify-content: space-around;
+    background: rgb(189, 120, 0);
+    background: linear-gradient(90deg, rgba(189, 120, 0, 1) 0%, rgba(184, 84, 186, 1) 35%, rgba(111, 22, 209, 1) 71%, rgba(15, 62, 212, 1) 100%);
+    grid-area: content1;
+}
+
+.content1 div {
     padding-top: 100px;
 }
 
-.box1{
-    width:300px;  
+.box1 {
+    width: 300px;
+}
+
+.box1 h1 {
+    margin-bottom: 20px;
+}
+
+.box1 p {
+    margin-bottom: 20px;
 }
 
 .box2 {
     margin-bottom: -100px;
 }
 
-#explore-btn{
-    background: linear-gradient(177.31deg, #32c5ff -71.22%, #7275f0 81.97%, #b620e0 246.67% );
+#explore-btn {
+    background: linear-gradient(177.31deg, #32c5ff -71.22%, #7275f0 81.97%, #b620e0 246.67%);
     border: 2px solid;
     border-radius: 8px;
-    padding:12px 32px;
+    padding: 12px 32px;
 }
 
 .burger {
-    display:none;
-}
-.burger div {
-    width:20px;
-    height:5px;
-    background-color: rgb(58, 54, 54);
-    margin:5px;
+    display: none;
 }
 
-.content2{
+.burger div {
+    width: 20px;
+    height: 5px;
+    background-color: rgb(58, 54, 54);
+    margin: 5px;
+}
+
+.content2 {
+    display: grid;
+    grid-area: content2;
+    grid-template-columns: 1fr 340px 0.3fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "c2box1 c2box2 ."
+        "c2box1 c2box3 .";
+    background-image: url('assets/triangle-background.png');
+    background-size: 100% 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.iph-in-hand {
+    grid-area: c2box1;
+}
+
+.c2box2 {
+    grid-area: c2box2
+}
+
+.c2box2 h1 {
+    margin-bottom: 20px;
+}
+
+.c2box3 {
+    grid-area: c2box3;
+    align-self: flex-start;
+}
+
+.iph-in-hand img {
+    height: 440px;
+}
+
+#learnmore-btn {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 12px 32px;
+}
+
+.content3 {
+    grid-area: content3;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(50, 197, 255, 0.12) 0%, #ffffff 100%);
+    background-size: 100% 100%;
+    background-size: auto;
+
+
+}
+
+.c3box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+}
+
+.content3 p:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.c3box2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.content4 {
+    background-image: url('assets/code-background.png');
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 60% 40%;
+    grid-template-areas:
+        "c4box1 ."
+        "c4box2 .";
+}
+.c4box1{
+    grid-area: c4box1;
+    align-self: center;
+    color:white;
+    margin:150px 100px 100px 100px;
+}
+.c4box2{
+    grid-area:c4box2;
+    justify-self: center;
+}
+#content4-btn1 {
+    background: linear-gradient(180deg, #313539 0%, #000000 100%);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 24%), inset 0px 2px 0px rgb(255 255 255 / 12%);
+    border-radius: 8px;
+    color: #ffffff;
+    width: 224px;
+    height: 48px;
+}
+
+.content5{
+    background: linear-gradient(257.46deg, #32c5ff -7.2%, #b620e0 67.92%, #f7b500 139.34% );
     display:grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeate(2,1fr);
-    grid-template-areas: "tri-bg tri-bg"
-    "iph-in-hand .";
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 90% 10%;
+    grid-template-areas: 
+    "c5box1 c5box2 c5box3 c5box4"
+    "c5box5 . . c5box6";
+}
+.content5 li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.c5box1 {
+    grid-area: c5box1;
+    justify-self: center;
+}
+.c5box2 {
+    grid-area: c5box2;
+    justify-self: center;
+}
+.c5box3 {
+    grid-area: c5box3;
+    justify-self: center;
+}
+.c5box4 {
+    grid-area: c5box4;
+    justify-self: center;
+}
+.c5box5 {
+    grid-area: c5box5;
+}
+.c5box6 {
+    grid-area: c5box6;
 }
 
 @media screen and (max-width:1200px) {
-    body {
-        overflow:hidden;
+   
+
+    .container {
+        grid-template-rows: 380px 413px 376px 640px 1100px;
+        overflow: hidden;
     }
+
     .nav-links {
-        position:absolute;
-        right:0px;
-        height:90vh;
-        top:10vh;
+        position: absolute;
+        right: 0px;
+        height: 90vh;
+        top: 10vh;
         background-color: rgb(255, 255, 255);
-        display:flex;
+        display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
 
     .burger {
-        display:block;
-        cursor:pointer;
+        display: block;
+        cursor: pointer;
     }
 
     .nav-active {
         transform: translateX(0%);
     }
+
+    .content1 {
+        display: flex;
+        grid-area: content1;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background: rgb(189, 120, 0);
+        background: linear-gradient(90deg, rgba(189, 120, 0, 1) 0%, rgba(184, 84, 186, 1) 35%, rgba(111, 22, 209, 1) 71%, rgba(15, 62, 212, 1) 100%);
+        align-items: center;
+    }
+
+    .content1 div {
+        padding-top: 0px;
+    }
+
+    .box1 {
+        display: flex;
+        flex-direction: column;
+        grid-area: c1box1;
+        align-items: center;
+    }
+
+    .box2 {
+        grid-area: c2box2;
+        display: flex;
+        height: 172px;
+        width: 300px;
+    }
+
+    .box2 img {
+        height: 174px;
+        width: 310px;
+    }
+
+    .content2 {
+        display: grid;
+        grid-area: content2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 45% 25% 30%;
+        grid-template-areas:
+            "c2box2"
+            "c2box1"
+            "c2box3";
+        background-image: url('assets/triangle-background.png');
+        background-size: 100% 100%;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iph-in-hand img {
+        height: 318px;
+        width: 380px;
+    }
+
+    .c2box3 {
+        justify-self: center;
+    }
+
+    .c3box2 {
+        justify-content: space-around;
+    }
+
+    .content5 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 24% 24% 24% 24% 2% 2%;
+        grid-template-areas:
+        "c5box2"
+        "c5box3"
+        "c5box4"
+        "c5box1"
+        "c5box5"
+        "c5box6";
+    }
+
+    .c5box1 {
+        grid-area: c5box1;
+        justify-self: center;
+    }
+    .c5box2 {
+        grid-area: c5box2;
+        justify-self: start;
+    }
+    .c5box3 {
+        grid-area: c5box3;
+        justify-self: start;
+    }
+    .c5box4 {
+        grid-area: c5box4;
+        justify-self: start;
+    }
+    .c5box5 {
+        grid-area: c5box5;
+        justify-self: center;
+    }
+    .c5box6 {
+        grid-area: c5box6;
+        justify-self: center;
+    }
+
 }
